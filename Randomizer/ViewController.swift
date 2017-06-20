@@ -44,15 +44,15 @@ class ViewController: NSViewController {
     func randSalary()  { textSalary.doubleValue = Random.salary() }
     func randBool()    { textBool.stringValue = Random.bool().description }
 
-    func listString()  { textList.string = RandomList.string(10, caps: (checkCaps.state == 1)).joined(separator: "\n") }
-    func listInteger() { textList.string = RandomList.int(count: 10, from: 0, to: 100).reduce("") { $0 + String(describing: $1) + "\n" } }
-    func listDouble()  { textList.string = RandomList.double(count: 10, from: 0, to: 100).reduce("") { $0 + String(describing: $1) + "\n" } }
-    func listDate()    { textList.string = RandomList.date(10, from: 1900).reduce("") { $0 + String(describing: $1) + "\n" } }
-    func listName()    { textList.string = RandomList.name(10).joined(separator: "\n") }
-    func listCity()    { textList.string = RandomList.city(10).joined(separator: "\n") }
-    func listState()   { textList.string = RandomList.state(10).joined(separator: "\n") }
-    func listSalary()  { textList.string = RandomList.salary(10).reduce("") { $0 + String(describing: $1) + "\n" } }
-    func listBool()    { textList.string = RandomList.bool(10).reduce("") { $0 + String(describing: $1) + "\n" } }
+    func listString()  { textList.string = RandomList(10).string(10, caps: (checkCaps.state == 1)).joined(separator: "\n") }
+    func listInteger() { textList.string = RandomList(10).int(from: 0, to: 100).reduce("") { $0 + String(describing: $1) + "\n" } }
+    func listDouble()  { textList.string = RandomList(10).double(from: 0, to: 100).reduce("") { $0 + String(describing: $1) + "\n" } }
+    func listDate()    { textList.string = RandomList(10).date(from: 1900).reduce("") { $0 + String(describing: $1) + "\n" } }
+    func listName()    { textList.string = RandomList(10).name().joined(separator: "\n") }
+    func listCity()    { textList.string = RandomList(10).city().joined(separator: "\n") }
+    func listState()   { textList.string = RandomList(10).state().joined(separator: "\n") }
+    func listSalary()  { textList.string = RandomList(10).salary().reduce("") { $0 + String(describing: $1) + "\n" } }
+    func listBool()    { textList.string = RandomList(10).bool().reduce("") { $0 + String(describing: $1) + "\n" } }
     
     
     func randAll() {
@@ -100,20 +100,21 @@ class ViewController: NSViewController {
         let salary1   = Random.salary()
         let salary2   = Random.salary(from: 50000, to: 95000, dec: 2)
         let email     = Random.email()
-        let listInt1  = RandomList.int(10)
-        let listInt2  = RandomList.int(count: 10, from: 0, to: 100)
-        let listDbl1  = RandomList.double(10)
-        let listDbl2  = RandomList.double(count: 10, from: 0.0, to: 99.9999, dec: 4)
-        let listFlt1  = RandomList.float(10)
-        let listFlt2  = RandomList.float(count: 10, from: 0.0, to: 99.9999, dec: 4)
-        let listDay1  = RandomList.date(10)
-        let listDay2  = RandomList.date(count: 10, from: Date(1920,01,01))
-        let listDay3  = RandomList.date(count: 10, from: Date.epoch)
-        let listDay4  = RandomList.date(count: 10, from: Date.yearIni, to: Date.today)
-        let listBool  = RandomList.bool(10)
-        let listName  = RandomList.name(10)
-        let listState = RandomList.state(10)
-        let listCity  = RandomList.city(10)
+        let listInt1  = RandomList(10).int(100)
+        let listInt2  = RandomList(10).int(from: 0, to: 100)
+        let listDbl1  = RandomList(10).double()
+        let listDbl2  = RandomList(10).double(from: 0.0, to: 99.9999, dec: 4)
+        let listFlt1  = RandomList(10).float()
+        let listFlt2  = RandomList(10).float(from: 0.0, to: 99.9999, dec: 4)
+        let listDay1  = RandomList(10).date()
+        let listDay2  = RandomList(10).date(from: 1920)
+        let listDay3  = RandomList(10).date(from: Date(1920,01,01))
+        let listDay4  = RandomList(10).date(from: Date.epoch)
+        let listDay5  = RandomList(10).date(from: Date.yearIni, to: Date.today)
+        let listBool  = RandomList(10).bool()
+        let listName  = RandomList(10).name()
+        let listState = RandomList(10).state()
+        let listCity  = RandomList(10).city()
         
         //Results
         print("str10", str1)
@@ -151,6 +152,7 @@ class ViewController: NSViewController {
         print("listDay2", listDay2)
         print("listDay3", listDay3)
         print("listDay4", listDay4)
+        print("listDay5", listDay5)
         print("listBool", listBool)
         print("listName", listName)
         print("listState", listState)

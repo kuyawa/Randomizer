@@ -192,61 +192,68 @@ class Random {
 }
 
 class RandomList {
-    static let randomMax = Double(UInt32.max)
+    
+    var count: Int = 10
+    
+    init(_ n: Int = 10) {
+        self.count = n
+    }
+    
+    let randomMax = Double(UInt32.max)
 
-    // let str = RandomList.string(10)
-    // let str = RandomList.string(10, caps: true)
-    static func string(_ n: Int, caps: Bool = false) -> [String] {
-        return (0..<n).map{ _ in Random.string(n, caps: caps) }
-    }
-
-    // let list = RandomList.int(10)
-    // let list = RandomList.int(count: 10, from: 0, to: 100)
-    static func int(_ n: Int) -> [Int] {
-        return int(count: n)
-    }
-    
-    static func int(count n: Int, from: Int = 0, to: Int = 9) -> [Int] {
-        return (0..<n).map{ _ in Random.int(from: from, to: to) }
-    }
-    
-    // let list = RandomList.double(10)
-    // let list = RandomList.double(count: 10, from: 0.0, to: 99.9999, dec: 4)
-    static func double(_ n: Int) -> [Double] {
-        return double(count: n)
-    }
-    
-    static func double(count n: Int, from: Double = 0.00, to: Double = 9.99, dec: Int = 2) -> [Double] {
-        return (0..<n).map{ _ in Random.double(from: from, to: to) }
-    }
-    
-    // let list = RandomList.float(10)
-    // let list = RandomList.float(count: 10, from: 0.0, to: 99.9999, dec: 4)
-    static func float(_ n: Int) -> [Float] {
-        return float(count: n)
-    }
-    
-    static func float(count n: Int, from: Float = 0.00, to: Float = 9.99, dec: Int = 2) -> [Float] {
-        return (0..<n).map{ _ in Random.float(from: from, to: to, dec: dec) }
-    }
-    
-    // let day = RandomList.date(10)
-    // let day = RandomList.date(count: 10, from: 1920)
-    // let day = RandomList.date(count: 10, from: Date.epoch)
-    // let day = RandomList.date(count: 10, from: Date.yearIni, to: Date.today)
-    static func date(_ n: Int) -> [Date] {
-        return date(count: n)
+    // let str = RandomList(10).string(10)
+    // let str = RandomList(10).string(10, caps: true)
+    func string(_ n: Int, caps: Bool = false) -> [String] {
+        return (0..<count).map{ _ in Random.string(n, caps: caps) }
     }
 
-    static func date(_ n: Int, from year: Int = 1900) -> [Date] {
-        return (0..<n).map{ _ in Random.date(from: year) }
+    // let list = RandomList(10).int(100)
+    // let list = RandomList(10).int(count: 10, from: 0, to: 100)
+    func int(_ max: Int) -> [Int] {
+        return int(from: 0, to: max)
     }
     
-    static func date(count n: Int, from: Date = Date.yearIni, to: Date = Date.today) -> [Date] {
-        var list = [Date](repeating: Date(), count: n)
+    func int(from: Int = 0, to: Int = 9) -> [Int] {
+        return (0..<count).map{ _ in Random.int(from: from, to: to) }
+    }
+    
+    // let list = RandomList(10).double(100.00)
+    // let list = RandomList(10).double(from: 0.0, to: 99.9999, dec: 4)
+    func double(_ max: Double) -> [Double] {
+        return double(from: 0.0, to: max)
+    }
+    
+    func double(from: Double = 0.00, to: Double = 9.99, dec: Int = 2) -> [Double] {
+        return (0..<count).map{ _ in Random.double(from: from, to: to) }
+    }
+    
+    // let list = RandomList(10).float(100.00)
+    // let list = RandomList(10).float(from: 0.0, to: 99.9999, dec: 4)
+    func float(_ max: Float) -> [Float] {
+        return float(from: 0.0, to: max)
+    }
+    
+    func float(from: Float = 0.00, to: Float = 9.99, dec: Int = 2) -> [Float] {
+        return (0..<count).map{ _ in Random.float(from: from, to: to, dec: dec) }
+    }
+    
+    // let day = RandomList(10).date()
+    // let day = RandomList(10).date(from: 1920)
+    // let day = RandomList(10).date(from: Date.epoch)
+    // let day = RandomList(10).date(from: Date.yearIni, to: Date.today)
+    func date() -> [Date] {
+        return date(from: 1900)
+    }
+
+    func date(from year: Int = 1900) -> [Date] {
+        return (0..<count).map{ _ in Random.date(from: year) }
+    }
+    
+    func date(from: Date = Date.yearIni, to: Date = Date.today) -> [Date] {
+        var list = [Date](repeating: Date(), count: count)
         let diff = to.timeIntervalSince(from)
         
-        for index in 0..<n {
+        for index in 0..<count {
             let num = Int(arc4random_uniform(UInt32(diff)))
             let day = Date(timeInterval: TimeInterval(num), since: from)
             list[index] = day
@@ -255,28 +262,29 @@ class RandomList {
         return list
     }
     
-    // let list = RandomList.bool(10)
-    static func bool(_ n: Int) -> [Bool] {
-        return (0..<n).map{ _ in Random.bool() }
+    // let list = RandomList(10).bool()
+    func bool() -> [Bool] {
+        return (0..<count).map{ _ in Random.bool() }
     }
     
-    // let list = RandomList.name(10)
-    static func name(_ n: Int) -> [String] {
-        return (0..<n).map{ _ in Random.name() }
+    // let list = RandomList(10).name()
+    func name() -> [String] {
+        return (0..<count).map{ _ in Random.name() }
     }
     
-    // let list = RandomList.state(10)
-    static func state(_ n: Int) -> [String] {
-        return (0..<n).map{ _ in Random.state() }
+    // let list = RandomList(10).state()
+    func state() -> [String] {
+        return (0..<count).map{ _ in Random.state() }
     }
     
-    // let list = RandomList.city(10)
-    static func city(_ n: Int) -> [String] {
-        return (0..<n).map{ _ in Random.city() }
+    // let list = RandomList(10).city()
+    func city() -> [String] {
+        return (0..<count).map{ _ in Random.city() }
     }
     
-    static func salary(_ n: Int, from: Double = 10000.00, to: Double = 99999.99, dec: Int = 2) -> [Double] {
-        return (0..<n).map{ _ in Random.salary(from: from, to: to, dec: dec) }
+    // let list = RandomList(10).salary()
+    func salary(from: Double = 10000.00, to: Double = 99999.99, dec: Int = 2) -> [Double] {
+        return (0..<count).map{ _ in Random.salary(from: from, to: to, dec: dec) }
     }
 
 }
