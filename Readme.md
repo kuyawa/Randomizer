@@ -30,6 +30,7 @@ let phone3    = Random.phone(code: "305")
 let salary1   = Random.salary()
 let salary2   = Random.salary(from: 50000, to: 95000, dec: 2)
 let email     = Random.email()
+let color     = Random.color()
 
 let listInt1  = RandomList(10).int(100)
 let listInt2  = RandomList(10).int(from: 0, to: 100)
