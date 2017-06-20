@@ -153,7 +153,10 @@ class Random {
     
     // let phone = Random.phone()
     static func phone() -> String {
-        return "?"
+        let area  = Random.int(from:  100, to: 999)
+        let part1 = Random.int(from:  100, to: 999)
+        let part2 = Random.int(from: 1000, to: 9999)
+        return "(\(area)) \(part1)-\(part2)"
     }
     
     // let phone = Random.phone(state: "FL")

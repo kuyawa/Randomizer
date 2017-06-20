@@ -34,7 +34,7 @@ class ViewController: NSViewController {
     @IBAction func buttonState(_ sender: Any)   { randState(); listState() }
     @IBAction func buttonSalary(_ sender: Any)  { randSalary(); listSalary() }
     @IBAction func buttonBool(_ sender: Any)    { randBool(); listBool() }
-    @IBAction func buttonColor(_ sender: Any)    { randColor(); listColor() }
+    @IBAction func buttonColor(_ sender: Any)   { randColor(); listColor() }
     @IBAction func buttonAll(_ sender: Any)     { randAll() }
     
     func randString()  { textString.stringValue = Random.string(10, caps: (checkCaps.state == 1)) }
@@ -77,7 +77,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         randAll()
-        //test()
+        test()
     }
 
     func test() {
