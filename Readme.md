@@ -1,6 +1,6 @@
 # Randomizer
 
-A Swift library to generate random elements like string, int, double, float, date, bool, name, city, state, salary. Pending elements address, phone, email, location, geopoint, lat/long.
+A Swift library to generate random elements like string, int, double, float, date, bool, name, city, state, salary. Pending elements address, phone, email, location, geopoint, lat/long, geohash.
 
 Use:
 
