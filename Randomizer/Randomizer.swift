@@ -136,9 +136,19 @@ class Random {
     }
     
     // let address = Random.address()
-    static func address() -> String {
-        // Returns an Address object with line1, city, state, zip, phone
-        return "?"
+    static func address(full: Bool = false) -> String {
+        // Returns an Address object with line1, optional city, state, zip
+        let part1 = Random.int(from: 100, to: 15000)
+        let part2 = ["NE", "NW", "SE", "SW"][Random.int(4)]
+        let part3 = Random.int(from: 1, to: 120)
+        let part4 = ["AV", "ST", "CT", "LN", "TR"][Random.int(5)]
+        let line1 = "\(part1) \(part2) \(part3) \(part4)"
+        if full {
+            let (city, state) = Random.cityState()
+            let zip = Random.int(from: 1001, to: 99999)
+            return line1 + ", \(city) \(state) \(zip)"
+        }
+        return line1
     }
     
     // let phone = Random.phone()

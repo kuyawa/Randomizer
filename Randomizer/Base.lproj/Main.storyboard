@@ -894,17 +894,17 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Haa-ks-SMI">
-                                <rect key="frame" x="461" y="76" width="234" height="263"/>
+                                <rect key="frame" x="461" y="64" width="234" height="296"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" id="g8S-zT-rBp">
-                                    <rect key="frame" x="1" y="1" width="232" height="261"/>
+                                    <rect key="frame" x="1" y="1" width="232" height="294"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" allowsCharacterPickerTouchBarItem="NO" allowsNonContiguousLayout="YES" textCompletion="NO" id="sZ8-rM-8hg">
-                                            <rect key="frame" x="0.0" y="0.0" width="232" height="261"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="232" height="294"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="232" height="261"/>
+                                            <size key="minSize" width="232" height="294"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -916,12 +916,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="S9Z-4d-iDG">
-                                    <rect key="frame" x="217" y="1" width="16" height="261"/>
+                                    <rect key="frame" x="217" y="1" width="16" height="294"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhC-Ed-huH">
-                                <rect key="frame" x="459" y="361" width="135" height="17"/>
+                                <rect key="frame" x="459" y="364" width="135" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ten random items" id="qcM-u7-uEN">
                                     <font key="font" metaFont="system"/>
