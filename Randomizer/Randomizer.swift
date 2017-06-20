@@ -14,12 +14,10 @@ class Random {
     // let str = Random.string(10)
     // let str = Random.string(10, caps: true)
     static func string(_ n: Int, caps: Bool = false) -> String {
-        let chars = caps ? "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" : "abcdefghijklmnopqrstuvwxyz"
+        let chars = caps ? "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" : "abcdefghijklmnopqrstuvwxyz"
         let text  = (0..<n).map { _ -> String in
             let rnd = Random.int(from: 0, to: chars.count)
-            let ind1 = chars.index(chars.startIndex, offsetBy: rnd)
-            let ind2 = chars.index(chars.startIndex, offsetBy: rnd+1)
-            return chars.substring(with: ind1 ..< ind2)
+            return String(chars[chars.index(chars.startIndex, offsetBy: rnd)])
         }
         
         return text.joined()
@@ -159,21 +157,6 @@ class Random {
     
     // let salary = Random.salary()
     // let salary = Random.salary(from: Double, to: Double, multiple: 50)
-/*
-    static func salary() -> Double {
-        return salary(from: 10000.00, to: 99999.99)
-    }
-
-    static func salary(from: Double = 10000.00, to: Double = 99999.99, dec: Int = 2) -> Double {
-        let p10 = pow(Double(10), Double(dec))
-        let max = Int(to * p10)
-        let num = Int(arc4random_uniform(UInt32(max)))
-        let dbl = Double(num) / p10
-        let rnd = round((from + dbl) * p10) / p10
-        
-        return rnd
-    }
-*/
     static func salary(from: Double = 10000.00, to: Double = 99999.99, dec: Int = 2, multiple: Double = 50.0) -> Double {
         let p10 = pow(Double(10), Double(dec))
         let max = Int(to * p10)
