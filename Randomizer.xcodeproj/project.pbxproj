@@ -11,15 +11,18 @@
 		F422C8211EF8706A00FB16F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422C8201EF8706A00FB16F4 /* ViewController.swift */; };
 		F422C8231EF8706A00FB16F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F422C8221EF8706A00FB16F4 /* Assets.xcassets */; };
 		F422C8261EF8706A00FB16F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F422C8241EF8706A00FB16F4 /* Main.storyboard */; };
+		F422C82E1EF8712600FB16F4 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422C82D1EF8712600FB16F4 /* Randomizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F422C81B1EF8706A00FB16F4 /* Randomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Randomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F422C81E1EF8706A00FB16F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F422C8201EF8706A00FB16F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F422C8201EF8706A00FB16F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		F422C8221EF8706A00FB16F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F422C8251EF8706A00FB16F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F422C8271EF8706A00FB16F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F422C82D1EF8712600FB16F4 /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		F422C82F1EF89CB600FB16F4 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,7 @@
 		F422C8121EF8706A00FB16F4 = {
 			isa = PBXGroup;
 			children = (
+				F422C82F1EF89CB600FB16F4 /* Readme.md */,
 				F422C81D1EF8706A00FB16F4 /* Randomizer */,
 				F422C81C1EF8706A00FB16F4 /* Products */,
 			);
@@ -52,11 +56,12 @@
 		F422C81D1EF8706A00FB16F4 /* Randomizer */ = {
 			isa = PBXGroup;
 			children = (
+				F422C8271EF8706A00FB16F4 /* Info.plist */,
 				F422C81E1EF8706A00FB16F4 /* AppDelegate.swift */,
 				F422C8201EF8706A00FB16F4 /* ViewController.swift */,
-				F422C8221EF8706A00FB16F4 /* Assets.xcassets */,
+				F422C82D1EF8712600FB16F4 /* Randomizer.swift */,
 				F422C8241EF8706A00FB16F4 /* Main.storyboard */,
-				F422C8271EF8706A00FB16F4 /* Info.plist */,
+				F422C8221EF8706A00FB16F4 /* Assets.xcassets */,
 			);
 			path = Randomizer;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F422C8211EF8706A00FB16F4 /* ViewController.swift in Sources */,
+				F422C82E1EF8712600FB16F4 /* Randomizer.swift in Sources */,
 				F422C81F1EF8706A00FB16F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +258,7 @@
 				DEVELOPMENT_TEAM = W7PMV9XFGM;
 				INFOPLIST_FILE = Randomizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.Randomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -266,6 +273,7 @@
 				DEVELOPMENT_TEAM = W7PMV9XFGM;
 				INFOPLIST_FILE = Randomizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Armonia.Randomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
