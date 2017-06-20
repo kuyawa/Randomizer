@@ -20,8 +20,8 @@ let day4      = Random.date(from: Date.yearIni, to: Date.today)
 let ok1       = Random.bool()
 let ok2       = Random.bool(probability: 25) // 25% probability
 let name      = Random.name()
-let state     = Random.state(short: true)
 let city      = Random.city()
+let state     = Random.state(short: true)
 let (city1, state1) = Random.cityState()
 let address   = Random.address()
 let phone1    = Random.phone()
@@ -44,8 +44,9 @@ let listDay4  = RandomList(10).date(from: Date.epoch)
 let listDay5  = RandomList(10).date(from: Date.yearIni, to: Date.today)
 let listBool  = RandomList(10).bool()
 let listName  = RandomList(10).name()
-let listState = RandomList(10).state()
 let listCity  = RandomList(10).city()
+let listState = RandomList(10).state()
+let listColor = RandomList(10).color()
 ```
 
 Enjoy!

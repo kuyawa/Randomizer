@@ -107,6 +107,14 @@ class Random {
         return name
     }
     
+    // let city = Random.city()
+    static func city() -> String {
+        let cities = ["Albuquerque", "Anaheim", "Anchorage", "Arlington", "Atlanta", "Aurora", "Austin", "Bakersfield", "Baltimore", "Baton Rouge", "Birmingham", "Boise", "Boston", "Buffalo", "Chandler", "Charlotte", "Chesapeake", "Chicago", "Chula Vista", "Cincinnati", "Cleveland", "Colorado Springs", "Columbus", "Corpus Christi", "Dallas", "Denver", "Detroit", "Durham", "El Paso", "Fort Wayne", "Fort Worth", "Fremont", "Fresno", "Garland", "Gilbert Town", "Glendale", "Greensboro", "Henderson", "Hialeah", "Honolulu", "Houston", "Indianapolis", "Irvine", "Irving", "Jacksonville", "Jersey ", "Kansas ", "Laredo", "Las Vegas", "Lexington", "Lincoln", "Long Beach", "Los Angeles", "Louisville", "Lubbock", "Madison", "Memphis", "Mesa", "Miami", "Milwaukee", "Minneapolis", "Nashville", "New Orleans", "New York", "Newark", "Norfolk", "Oakland", "Oklahoma ", "Omaha", "Orlando", "Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Portland", "Raleigh", "Reno", "Riverside", "Sacramento", "San Antonio", "San Bernardino", "San Diego", "San Francisco", "San Jose", "Santa Ana", "Scottsdale", "Seattle", "St. Louis", "St. Paul", "St. Petersburg", "Stockton", "Tampa", "Toledo", "Tucson", "Tulsa", "Virginia Beach", "Washington", "Wichita", "Winston"]
+        let index = Random.int(cities.count)
+        
+        return cities[index]
+    }
+    
     // let state = Random.state(short: true)
     static func state(short: Bool = false) -> String {
         let states   = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
@@ -125,14 +133,6 @@ class Random {
         let city     = capitals[state] ?? "?"
         
         return (city, state)
-    }
-    
-    // let city = Random.city()
-    static func city() -> String {
-        let cities = ["Albuquerque", "Anaheim", "Anchorage", "Arlington", "Atlanta", "Aurora", "Austin", "Bakersfield", "Baltimore", "Baton Rouge", "Birmingham", "Boise", "Boston", "Buffalo", "Chandler", "Charlotte", "Chesapeake", "Chicago", "Chula Vista", "Cincinnati", "Cleveland", "Colorado Springs", "Columbus", "Corpus Christi", "Dallas", "Denver", "Detroit", "Durham", "El Paso", "Fort Wayne", "Fort Worth", "Fremont", "Fresno", "Garland", "Gilbert Town", "Glendale", "Greensboro", "Henderson", "Hialeah", "Honolulu", "Houston", "Indianapolis", "Irvine", "Irving", "Jacksonville", "Jersey ", "Kansas ", "Laredo", "Las Vegas", "Lexington", "Lincoln", "Long Beach", "Los Angeles", "Louisville", "Lubbock", "Madison", "Memphis", "Mesa", "Miami", "Milwaukee", "Minneapolis", "Nashville", "New Orleans", "New York", "Newark", "Norfolk", "Oakland", "Oklahoma ", "Omaha", "Orlando", "Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Portland", "Raleigh", "Reno", "Riverside", "Sacramento", "San Antonio", "San Bernardino", "San Diego", "San Francisco", "San Jose", "Santa Ana", "Scottsdale", "Seattle", "St. Louis", "St. Paul", "St. Petersburg", "Stockton", "Tampa", "Toledo", "Tucson", "Tulsa", "Virginia Beach", "Washington", "Wichita", "Winston"]
-        let index = Random.int(cities.count)
-        
-        return cities[index]
     }
     
     // let address = Random.address()
@@ -261,14 +261,14 @@ class RandomList {
         return (0..<count).map{ _ in Random.name() }
     }
     
-    // let list = RandomList(10).state()
-    func state() -> [String] {
-        return (0..<count).map{ _ in Random.state() }
-    }
-    
     // let list = RandomList(10).city()
     func city() -> [String] {
         return (0..<count).map{ _ in Random.city() }
+    }
+    
+    // let list = RandomList(10).state()
+    func state() -> [String] {
+        return (0..<count).map{ _ in Random.state() }
     }
     
     // let list = RandomList(10).salary()

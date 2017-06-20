@@ -96,8 +96,8 @@ class ViewController: NSViewController {
         let ok1       = Random.bool()
         let ok2       = Random.bool(probability: 25) // 25% probability
         let name      = Random.name()
-        let state     = Random.state(short: true)
         let city      = Random.city()
+        let state     = Random.state(short: true)
         let (city1, state1) = Random.cityState()
         let address   = Random.address()
         let phone1    = Random.phone()
@@ -107,6 +107,7 @@ class ViewController: NSViewController {
         let salary2   = Random.salary(from: 50000, to: 95000, dec: 2)
         let email     = Random.email()
         let color     = Random.color()
+        
         let listInt1  = RandomList(10).int(100)
         let listInt2  = RandomList(10).int(from: 0, to: 100)
         let listDbl1  = RandomList(10).double()
@@ -120,8 +121,9 @@ class ViewController: NSViewController {
         let listDay5  = RandomList(10).date(from: Date.yearIni, to: Date.today)
         let listBool  = RandomList(10).bool()
         let listName  = RandomList(10).name()
-        let listState = RandomList(10).state()
         let listCity  = RandomList(10).city()
+        let listState = RandomList(10).state()
+        let listColor = RandomList(10).color()
         
         //Results
         print("str10", str1)
@@ -139,8 +141,8 @@ class ViewController: NSViewController {
         print("ok1", ok1)
         print("ok25", ok2)
         print("name", name)
-        print("state", state)
         print("city", city)
+        print("state", state)
         print("city1, state1", city1, state1)
         print("address", address)
         print("phone", phone1)
@@ -150,6 +152,7 @@ class ViewController: NSViewController {
         print("salary2", salary2)
         print("email", email)
         print("color", color)
+        
         print("listInt1", listInt1)
         print("listInt2", listInt2)
         print("listDbl1", listDbl1)
@@ -163,8 +166,9 @@ class ViewController: NSViewController {
         print("listDay5", listDay5)
         print("listBool", listBool)
         print("listName", listName)
-        print("listState", listState)
         print("listCity", listCity)
+        print("listState", listState)
+        print("listColor", listColor)
 
     }
 }
