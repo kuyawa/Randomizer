@@ -6,6 +6,7 @@
 //  Copyright © 2017 Armonia. All rights reserved.
 //
 
+import Cocoa
 import Foundation
 
 class Random {
@@ -172,6 +173,11 @@ class Random {
         return "?"
     }
     
+    // let color = Random.color()
+    static func color() -> NSColor {
+        return NSColor(red: CGFloat(int(255))/255, green: CGFloat(int(255))/255, blue: CGFloat(int(255))/255, alpha: 1.0)
+    }
+    
 }
 
 class RandomList {
@@ -270,6 +276,11 @@ class RandomList {
         return (0..<count).map{ _ in Random.salary(from: from, to: to, dec: dec) }
     }
 
+    // let list = RandomList(10).color()
+    func color() -> [NSColor] {
+        return (0..<count).map{ _ in Random.color() }
+    }
+    
 }
 
 
@@ -300,5 +311,18 @@ extension String {
     var count: Int { return characters.count }
 }
 
+extension NSColor {
+    var hex: String {
+        var rr: CGFloat = 0
+        var gg: CGFloat = 0
+        var bb: CGFloat = 0
+        var aa: CGFloat = 0
+        
+        getRed(&rr, green: &gg, blue: &bb, alpha: &aa)
+        let rgb: Int = (Int)(rr*255)<<16 | (Int)(gg*255)<<8 | (Int)(bb*255)<<0
+        
+        return String(format:"#%06x", rgb)
+    }
+}
 
 // End

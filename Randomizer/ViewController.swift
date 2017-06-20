@@ -19,6 +19,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var textState: NSTextField!
     @IBOutlet weak var textSalary: NSTextField!
     @IBOutlet weak var textBool: NSTextField!
+    @IBOutlet weak var textColor: NSTextField!
+    @IBOutlet weak var colorWell: NSColorWell!
     @IBOutlet weak var checkCaps: NSButton!
     
     @IBOutlet var textList: NSTextView!
@@ -32,6 +34,7 @@ class ViewController: NSViewController {
     @IBAction func buttonState(_ sender: Any)   { randState(); listState() }
     @IBAction func buttonSalary(_ sender: Any)  { randSalary(); listSalary() }
     @IBAction func buttonBool(_ sender: Any)    { randBool(); listBool() }
+    @IBAction func buttonColor(_ sender: Any)    { randColor(); listColor() }
     @IBAction func buttonAll(_ sender: Any)     { randAll() }
     
     func randString()  { textString.stringValue = Random.string(10, caps: (checkCaps.state == 1)) }
@@ -43,6 +46,7 @@ class ViewController: NSViewController {
     func randState()   { textState.stringValue = Random.state() }
     func randSalary()  { textSalary.doubleValue = Random.salary() }
     func randBool()    { textBool.stringValue = Random.bool().description }
+    func randColor()   { let color = Random.color(); textColor.stringValue = color.hex; colorWell.color = color }
 
     func listString()  { textList.string = RandomList(10).string(10, caps: (checkCaps.state == 1)).joined(separator: "\n") }
     func listInteger() { textList.string = RandomList(10).int(from: 0, to: 100).reduce("") { $0 + String(describing: $1) + "\n" } }
@@ -53,6 +57,7 @@ class ViewController: NSViewController {
     func listState()   { textList.string = RandomList(10).state().joined(separator: "\n") }
     func listSalary()  { textList.string = RandomList(10).salary().reduce("") { $0 + String(describing: $1) + "\n" } }
     func listBool()    { textList.string = RandomList(10).bool().reduce("") { $0 + String(describing: $1) + "\n" } }
+    func listColor()   { textList.string = RandomList(10).color().reduce("") { $0 + $1.hex + "\n" } }
     
     
     func randAll() {
@@ -65,6 +70,7 @@ class ViewController: NSViewController {
         randState()
         randSalary()
         randBool()
+        randColor()
         listString()
     }
     
@@ -100,6 +106,7 @@ class ViewController: NSViewController {
         let salary1   = Random.salary()
         let salary2   = Random.salary(from: 50000, to: 95000, dec: 2)
         let email     = Random.email()
+        let color     = Random.color()
         let listInt1  = RandomList(10).int(100)
         let listInt2  = RandomList(10).int(from: 0, to: 100)
         let listDbl1  = RandomList(10).double()
@@ -142,6 +149,7 @@ class ViewController: NSViewController {
         print("salary1", salary1)
         print("salary2", salary2)
         print("email", email)
+        print("color", color)
         print("listInt1", listInt1)
         print("listInt2", listInt2)
         print("listDbl1", listDbl1)
