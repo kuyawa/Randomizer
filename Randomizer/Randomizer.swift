@@ -31,8 +31,7 @@ class Random {
     }
     
     static func int(from: Int = 0, to: Int = 9) -> Int {
-        let num = Int(arc4random_uniform(UInt32(to)))
-        return num
+        return Int(arc4random_uniform(UInt32(to)))
     }
     
     // let num = Random.double(99.99)
@@ -159,16 +158,6 @@ class Random {
         return "(\(area)) \(part1)-\(part2)"
     }
     
-    // let phone = Random.phone(state: "FL")
-    // let phone = Random.phone(code: "305")
-    static func phone(state: String) -> String {
-        return "?"
-    }
-
-    static func phone(code: String) -> String {
-        return "?"
-    }
-    
     // let salary = Random.salary()
     // let salary = Random.salary(from: Double, to: Double, multiple: 50)
     static func salary(from: Double = 10000.00, to: Double = 99999.99, dec: Int = 2, multiple: Double = 50.0) -> Double {
@@ -183,7 +172,9 @@ class Random {
 
     // let email = Random.email()
     static func email() -> String {
-        return "?"
+        let name = Random.name().replacingOccurrences(of: " ", with: "").lowercased()
+        let provider = ["gmail.com", "yahoo.com", "hotmail.com", "icloud.com", "me.com", "protonmail.com", "mailinator.com"][Random.int(7)]
+        return "\(name)@\(provider)"
     }
     
     // let color = Random.color()
@@ -284,6 +275,16 @@ class RandomList {
         return (0..<count).map{ _ in Random.state() }
     }
     
+    // let list = RandomList(10).email()
+    func phone() -> [String] {
+        return (0..<count).map{ _ in Random.phone() }
+    }
+    
+    // let list = RandomList(10).email()
+    func email() -> [String] {
+        return (0..<count).map{ _ in Random.email() }
+    }
+    
     // let list = RandomList(10).salary()
     func salary(from: Double = 10000.00, to: Double = 99999.99, dec: Int = 2) -> [Double] {
         return (0..<count).map{ _ in Random.salary(from: from, to: to, dec: dec) }
@@ -298,6 +299,10 @@ class RandomList {
 
 
 extension Date {
+    var date: String {
+        let text = String(describing: self)
+        return text.substring(to: text.index(text.startIndex, offsetBy: 10))
+    }
     static var today: Date { return Date() }
     static var epoch: Date { return Date(timeIntervalSince1970: 0) }
     static var year:  Int  { return Calendar.current.dateComponents([.year], from: Date()).year! }
